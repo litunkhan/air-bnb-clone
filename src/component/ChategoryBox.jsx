@@ -1,8 +1,31 @@
 import React from 'react'
-
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import qs from 'query-string'
  const ChategoryBox = ({ label, icon: Icon, selected }) => {
+  const [params,serParams] = useSearchParams()
+  
+const navigate = useNavigate()
+  const handleClick = ()=>{
+    let currentQuery = {}
+    if(params){
+      currentQuery = qs.parse(params.toString()) 
+    }
+
+    const updatedQuery = {
+      ...currentQuery,category:label
+    }
+    const url = qs.stringifyUrl({
+      url:'/',
+      query:updatedQuery
+    },
+    {skipNull:true}
+    )
+    navigate(url)
+  }
+  
   return (
     <div
+    onClick={handleClick}
     className={`
         flex 
         flex-col 

@@ -1,8 +1,11 @@
-import React from 'react'
-
- const Footer = () => {
+const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className='px-4 divide-y  text-gray-800 relative bottom-0 left-0'>
+      <div className='py-6 text-sm text-center text-gray-900'>
+        © 2023 AirCNC Inc. All rights reserved.
+      </div>
+    </footer>
   )
 }
+
 export default Footer

@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Homepage from './pages/Homepage.jsx';
 import Authprobider from './Authprovider/Authprovider.jsx';
+import RoomsDetails from './pages/RoomsDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Homepage/>
+      },
+      {
+        path:'/room/:id',
+        element:<RoomsDetails/>
       }
     ]
   },
